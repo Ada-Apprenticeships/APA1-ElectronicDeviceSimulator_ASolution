@@ -6,18 +6,21 @@ export default class Device {
         return this.#isBooted;
     }
 
-    set isBooted(_) { }
+    set isBooted(value) {
+        this.#isBooted = value
+    }
   
     get isSleeping() {
         return this.#isSleeping;
     }
 
-    set isSleeping(_) { }
+    set isSleeping(value) {
+        this.#isSleeping = value;
+    }
 
-    
     display() {
         if (!this.isBooted) {
-            return "Cannot display - device is not booted.";
+            return `Cannot display - ${this.constructor.name} is not booted.`;
         }
         return "Device is displaying something.";
     }

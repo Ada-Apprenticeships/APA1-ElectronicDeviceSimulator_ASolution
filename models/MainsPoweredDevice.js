@@ -11,15 +11,8 @@ export default class MainsPoweredDevice extends Device {
       return this.#isPluggedIn;
     }
 
-    set isPluggedIn(_) {
-      this.#isPluggedIn = true;
-    }
-  
-    display() {
-      if (!this.isPluggedIn) {
-        return "Cannot display - device is not plugged in.";
-      }
-      return super.display();
+    set isPluggedIn(value) {
+      this.#isPluggedIn = value;
     }
   
     plugIn() {
