@@ -11,20 +11,20 @@ function demonstrate(device, name, additionalTests = []) {
     console.log(`\n=== ${name} Demonstration ===`);
     console.log(device.display());
     console.log(device.boot());
-    additionalTests.forEach(test => console.log(test()));
+    additionalTests.forEach(test => console.log(test(device)));
 }
 
 console.log('Device Hierarchy Demonstration\n');
 
 const devices = [
     { device: new Device(), name: 'Basic Device', tests: [] },
-    { device: new Phone(70, 2.5), name: 'Basic Phone', tests: [() => device.call("555-1234")] },
-    { device: new Laptop(90, 4.0), name: 'Laptop', tests: [() => device.charge(), () => device.sleep(), () => device.wake()] },
-    { device: new Smartphone(60, 3.0), name: 'Smartphone', tests: [() => device.installApp("Cool App"), () => device.takePhoto()] },
-    { device: new Tablet(100, 3.5), name: 'Tablet', tests: [() => device.expandScreen()] },
-    { device: new SmartWatch(85, 0.5), name: 'Smartwatch', tests: [() => device.toggleHeartRate(), () => device.checkSteps()] },
-    { device: new GamingConsole(), name: 'Gaming Console', tests: [() => device.plugIn(), () => device.loadGame("Awesome Game"), () => device.exitGame()] },
-    { device: new SmartTV(), name: 'Smart TV', tests: [() => device.plugIn(), () => device.sleep(), () => device.wake()] }
+    { device: new Phone(70, 2.5), name: 'Basic Phone', tests: [(d) => d.call("555-1234")] },
+    { device: new Laptop(90, 4.0), name: 'Laptop', tests: [(d) => d.charge(), (d) => d.sleep(), (d) => d.wake()] },
+    { device: new Smartphone(60, 3.0), name: 'Smartphone', tests: [(d) => d.installApp("Cool App"), (d) => d.takePhoto()] },
+    { device: new Tablet(100, 3.5), name: 'Tablet', tests: [(d) => d.expandScreen()] },
+    { device: new SmartWatch(85, 0.5), name: 'Smartwatch', tests: [(d) => d.toggleHeartRate(), (d) => d.checkSteps()] },
+    { device: new GamingConsole(), name: 'Gaming Console', tests: [(d) => d.plugIn(), (d) => d.loadGame("Awesome Game"), (d) => d.exitGame()] },
+    { device: new SmartTV(), name: 'Smart TV', tests: [(d) => d.plugIn(), (d) => d.sleep(), (d) => d.wake()] }
 ];
 
 devices.forEach(({ device, name, tests }) => {
