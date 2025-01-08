@@ -8,6 +8,9 @@ export default class Device {
       }
     
       display() {
+        if (!this.#isBooted) {
+          return "Cannot display - device is not booted.";
+        }
         return "Device is displaying something.";
       }
     

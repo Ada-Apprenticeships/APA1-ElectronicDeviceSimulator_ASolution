@@ -8,6 +8,13 @@ export default class MainsPoweredDevice extends Device {
       super();
       this.#isPluggedIn = false;
     }
+
+    display() {
+      if (!this.#isPluggedIn) {
+        return "Cannot display - device is not plugged in.";
+      }
+      return super.display();
+    }
   
     get isPluggedIn() {
       return this.#isPluggedIn;
