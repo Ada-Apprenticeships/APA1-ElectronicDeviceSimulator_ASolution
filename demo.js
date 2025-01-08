@@ -104,7 +104,7 @@ try {
     const smartTV = new SmartTV();
     demonstrateDevice(smartTV, 'Smart TV');
     console.log(smartTV.plugIn()); 
-    console.log(smartTV.changeChannel(5));
+    console.log(smartTV.currentChannel = 5);
     console.log(smartTV.sleep());
     console.log(smartTV.wake());
 } catch (error) {

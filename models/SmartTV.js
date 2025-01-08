@@ -11,9 +11,8 @@ export default class SmartTV extends MainsPoweredDevice {
         return this.#currentChannel;
     }
   
-    changeChannel(channel) {
-      this.currentChannel = channel;
-      return `Changed to channel ${channel}.`;
+    set currentChannel(channel) {
+      this.#currentChannel = channel;
     }
   
     sleep() {

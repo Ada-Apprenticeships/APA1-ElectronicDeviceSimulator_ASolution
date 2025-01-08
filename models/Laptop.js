@@ -11,6 +11,10 @@ export default class Laptop extends BatteryPoweredDevice {
         return this.#isSleeping;
     }
 
+    set isSleeping(value){
+        this.#isSleeping = value;
+    }
+
     sleep() {
         if (!this.isBooted) {
             return 'Cannot sleep - laptop is not booted';
