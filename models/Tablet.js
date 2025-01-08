@@ -1,17 +1,19 @@
 import Phone from './Phone.js';
 
 export default class Tablet extends Phone {
-    #isExpanded = false;
+  #isExpanded = false;
 
-    constructor(batteryLevel, capacityKWh) {
-        super(batteryLevel, capacityKWh);
-    }
+  constructor(batteryLevel, capacityKWh) {
+    super(batteryLevel, capacityKWh);
+    
+  }
 
-    expandScreen() {
-        if (this.batteryLevel < 20) {
-            return 'Cannot expand screen - battery too low';
-        }
-        this.#isExpanded = !this.#isExpanded;
-        return `Screen ${this.#isExpanded ? 'expanded' : 'collapsed'}`;
-    }
+  get isExpanded(){
+    return this.#isExpanded;
+  }
+
+  expandScreen() {
+    this.isExpanded = !this.isExpanded;
+    return this.isExpanded ? "Screen expanded." : "Screen collapsed.";
+  }
 }

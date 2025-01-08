@@ -1,17 +1,21 @@
-import Device from './Device.js';
+import BatteryPoweredDevice from './BatteryPoweredDevice.js';
 
-export default class Laptop extends Device {
+export default class Laptop extends BatteryPoweredDevice {
     #isSleeping = false;
 
     constructor(batteryLevel, capacityKWh) {
         super(batteryLevel, capacityKWh);
     }
 
+    get isSleeping(){
+        return this.#isSleeping;
+    }
+
     sleep() {
         if (!this.isBooted) {
             return 'Cannot sleep - laptop is not booted';
         }
-        this.#isSleeping = true;
+        this.isSleeping = true;
         return 'Laptop entering sleep mode...';
     }
 
@@ -19,10 +23,10 @@ export default class Laptop extends Device {
         if (!this.isBooted) {
             return 'Cannot wake - laptop is not booted';
         }
-        if (!this.#isSleeping) {
+        if (!this.isSleeping) {
             return 'Laptop is already awake';
         }
-        this.#isSleeping = false;
+        this.isSleeping = false;
         return 'Laptop waking from sleep mode...';
     }
 }
