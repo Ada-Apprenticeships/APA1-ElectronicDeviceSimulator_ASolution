@@ -11,9 +11,7 @@ export default class Laptop extends BatteryPoweredDevice {
         return this.#isSleeping;
     }
 
-    set isSleeping(value){
-        this.#isSleeping = value;
-    }
+    set isSleeping(_){ }
 
     sleep() {
         if (!this.isBooted) {

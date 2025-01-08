@@ -1,4 +1,3 @@
-
 import Phone from './Phone.js';
 
 export default class Tablet extends Phone {

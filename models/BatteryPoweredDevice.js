@@ -1,4 +1,3 @@
-
 import Device from './Device.js';
 
 export default class BatteryPoweredDevice extends Device {

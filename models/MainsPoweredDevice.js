@@ -22,7 +22,6 @@ export default class MainsPoweredDevice extends Device {
       return super.display();
     }
   
-  
     plugIn() {
       this.isPluggedIn = true;
       return "Device plugged in.";

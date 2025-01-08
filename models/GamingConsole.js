@@ -1,4 +1,3 @@
-
 import MainsPoweredDevice from './MainsPoweredDevice.js';
 
 export default class GamingConsole extends MainsPoweredDevice { 

@@ -15,11 +15,4 @@ export default class SmartTV extends MainsPoweredDevice {
       this.#currentChannel = channel;
     }
   
-    sleep() {
-      return "TV is sleeping.";
-    }
-  
-    wake() {
-      return "TV is awake.";
-    }
   }
