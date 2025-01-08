@@ -6,21 +6,25 @@ export default class Device {
       get isBooted() {
         return this.#isBooted;
       }
-    
+
+      set isBooted(_) {
+        this.#isBooted = true;         
+      }
+  
       display() {
-        if (!this.#isBooted) {
+        if (!this.isBooted) {
           return "Cannot display - device is not booted.";
         }
         return "Device is displaying something.";
       }
     
       boot() {
-        this.#isBooted = true;
+        this.isBooted = true;
         return "Device booted up.";
       }
     
       shutdown() {
-        this.#isBooted = false;
+        this.isBooted = false;
         return "Device shut down.";
       }
 }

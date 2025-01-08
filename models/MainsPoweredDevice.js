@@ -1,32 +1,35 @@
-
 import Device from './Device.js';
 
 export default class MainsPoweredDevice extends Device {
-    #isPluggedIn;
+    #isPluggedIn = false;
     
     constructor() {
       super();
-      this.#isPluggedIn = false;
     }
 
+    get isPluggedIn() {
+      return this.#isPluggedIn;
+    }
+
+    set isPluggedIn(_) {
+      this.#isPluggedIn = true;
+    }
+  
     display() {
-      if (!this.#isPluggedIn) {
+      if (!this.isPluggedIn) {
         return "Cannot display - device is not plugged in.";
       }
       return super.display();
     }
   
-    get isPluggedIn() {
-      return this.#isPluggedIn;
-    }
   
     plugIn() {
-      this.#isPluggedIn = true;
+      this.isPluggedIn = true;
       return "Device plugged in.";
     }
   
     unplug() {
-      this.#isPluggedIn = false;
+      this.isPluggedIn = false;
       return "Device unplugged.";
     }
   }
