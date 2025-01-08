@@ -2,6 +2,12 @@ export default class Device {
     #isBooted = false;
     #isSleeping = false;
 
+    constructor() {
+        if (this.constructor === Device) {
+            throw new Error('Device is abstract and cannot be instantiated directly');
+        }
+    }
+
     get isBooted() {
         return this.#isBooted;
     }

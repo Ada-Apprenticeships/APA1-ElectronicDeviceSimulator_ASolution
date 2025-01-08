@@ -17,7 +17,6 @@ function demonstrate(device, name, additionalTests = []) {
 console.log('Device Hierarchy Demonstration\n');
 
 const devices = [
-    { device: new Device(), name: 'Basic Device', tests: [] },
     { device: new Phone(70, 2.5), name: 'Basic Phone', tests: [(d) => d.call("555-1234")] },
     { device: new Laptop(90, 4.0), name: 'Laptop', tests: [(d) => d.charge(), (d) => d.sleep(), (d) => d.wake()] },
     { device: new Smartphone(60, 3.0), name: 'Smartphone', tests: [(d) => d.installApp("Cool App"), (d) => d.takePhoto()] },

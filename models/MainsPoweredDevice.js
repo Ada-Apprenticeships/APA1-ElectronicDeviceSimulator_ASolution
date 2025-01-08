@@ -5,6 +5,9 @@ export default class MainsPoweredDevice extends Device {
 
     constructor() {
       super();
+      if (this.constructor === MainsPoweredDevice) {
+        throw new Error('MainsPoweredDevice is abstract and cannot be instantiated directly');
+      }
     }
 
     boot() {

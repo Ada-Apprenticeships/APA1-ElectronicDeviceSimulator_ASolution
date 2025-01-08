@@ -6,6 +6,9 @@ export default class BatteryPoweredDevice extends Device {
 
     constructor(batteryLevel, capacityKWh) {
       super();
+      if (this.constructor === BatteryPoweredDevice) {
+        throw new Error('BatteryPoweredDevice is abstract and cannot be instantiated directly');
+      }
       this.#batteryLevel = batteryLevel;
       this.#capacityKWh = capacityKWh;
     }
