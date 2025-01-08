@@ -1,3 +1,4 @@
+
 import BatteryPoweredDevice from './BatteryPoweredDevice.js';
 
 export default class Phone extends BatteryPoweredDevice {
@@ -9,5 +10,3 @@ export default class Phone extends BatteryPoweredDevice {
       return `Calling ${number}...`;
     }
 }
-  
-  

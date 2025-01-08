@@ -1,15 +1,19 @@
-import MainsPoweredDevice from "./MainsPoweredDevice.js";
+
+import MainsPoweredDevice from './MainsPoweredDevice.js';
 
 export default class GamingConsole extends MainsPoweredDevice { 
     #isGameRunning = false;
     
     constructor() {
       super();
-      
     }
 
-    get isGameRunning(){
+    get isGameRunning() {
         return this.#isGameRunning;
+    }
+
+    set isGameRunning(value) {
+        this.#isGameRunning = value;
     }
   
     loadGame(gameName) {

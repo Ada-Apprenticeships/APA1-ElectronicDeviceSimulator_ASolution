@@ -1,4 +1,5 @@
-import Device from "./Device.js";
+
+import Device from './Device.js';
 
 export default class MainsPoweredDevice extends Device {
     #isPluggedIn;

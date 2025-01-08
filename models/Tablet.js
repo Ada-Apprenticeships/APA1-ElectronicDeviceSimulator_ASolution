@@ -1,3 +1,4 @@
+
 import Phone from './Phone.js';
 
 export default class Tablet extends Phone {
@@ -5,11 +6,14 @@ export default class Tablet extends Phone {
 
   constructor(batteryLevel, capacityKWh) {
     super(batteryLevel, capacityKWh);
-    
   }
 
-  get isExpanded(){
+  get isExpanded() {
     return this.#isExpanded;
+  }
+
+  set isExpanded(value) {
+    this.#isExpanded = value;
   }
 
   expandScreen() {
