@@ -8,17 +8,10 @@ export default class MainsPoweredDevice extends Device {
     }
 
     boot() {
-      if (!this.#isPluggedIn) {
+      if (!this.isPluggedIn) {
         return "Cannot boot - device is not plugged in.";
       }
       return super.boot();
-    }
-
-    display() {
-      if (!this.#isPluggedIn) {
-        return "Cannot display - device is not plugged in.";
-      }
-      return super.display();
     }
 
     get isPluggedIn() {
@@ -27,6 +20,13 @@ export default class MainsPoweredDevice extends Device {
 
     set isPluggedIn(value) {
       this.#isPluggedIn = value;
+    }
+
+    display() {
+      if (!this.isPluggedIn) {
+        return "Cannot display - device is not plugged in.";
+      }
+      return super.display();
     }
 
     plugIn() {
